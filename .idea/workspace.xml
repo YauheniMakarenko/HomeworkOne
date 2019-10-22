@@ -17,6 +17,9 @@
   </component>
   <component name="ProjectId" id="1SYsh3XtbVgu8fu3RXyX4Wtu0MQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HomeworkTwo" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -29,7 +32,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HomeworkTwo">
     <configuration name="HomeworkOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HomeworkOne" />
       <module name="HomeworkOne" />
@@ -37,8 +40,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HomeworkTwo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HomeworkTwo" />
+      <module name="HomeworkOne" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HomeworkTwo" />
         <item itemvalue="Application.HomeworkOne" />
       </list>
     </recent_temporary>
