@@ -40,6 +40,10 @@ public class HomeworkTwo {
         System.out.println("Task 12");
         createTwoDimensionalRandomArray(3, 4);
         System.out.println("---------------------------------------");
+        System.out.println("Task 13");
+        System.out.println(sumElementArrayRecursion(0, array));
+        System.out.println("---------------------------------------");
+
     }
 
 
@@ -171,4 +175,13 @@ public class HomeworkTwo {
             }
         }
     }
+
+    public static int sumElementArrayRecursion(int Index, int[] array) {
+        if (Index == (array.length)) {
+            return 0;
+        } else {
+            return array[Index] + sumElementArrayRecursion(Index + 1, array);
+        }
+    }
 }
+
