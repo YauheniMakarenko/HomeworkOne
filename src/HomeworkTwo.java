@@ -189,10 +189,10 @@ public class HomeworkTwo {
 
     public static int[] dynamicArray(int[] array) {
         System.out.println(Arrays.toString(array));
-        int[] newArray = Arrays.copyOf(array, array.length + 1);
+        array = Arrays.copyOf(array, array.length + 1);
         Random r = new Random();
-        newArray[newArray.length - 1] = r.nextInt(100) - 50;
-        return newArray;
+        array[array.length - 1] = r.nextInt(100) - 50;
+        return array;
     }
 }
 
