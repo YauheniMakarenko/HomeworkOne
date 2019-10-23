@@ -43,6 +43,9 @@ public class HomeworkTwo {
         System.out.println("Task 13");
         System.out.println(sumElementArrayRecursion(0, array));
         System.out.println("---------------------------------------");
+        System.out.println("Task 14");
+        System.out.println(Arrays.toString(dynamicArray(array)));
+        System.out.println("---------------------------------------");
 
     }
 
@@ -182,6 +185,14 @@ public class HomeworkTwo {
         } else {
             return array[Index] + sumElementArrayRecursion(Index + 1, array);
         }
+    }
+
+    public static int[] dynamicArray(int[] array) {
+        System.out.println(Arrays.toString(array));
+        int[] newArray = Arrays.copyOf(array, array.length + 1);
+        Random r = new Random();
+        newArray[newArray.length - 1] = r.nextInt(100) - 50;
+        return newArray;
     }
 }
 
