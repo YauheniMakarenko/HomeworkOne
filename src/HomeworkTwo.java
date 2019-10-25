@@ -1,4 +1,8 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class HomeworkTwo {
@@ -38,15 +42,14 @@ public class HomeworkTwo {
         System.out.println(Arrays.toString(sortUp(array)));
         System.out.println("---------------------------------------");
         System.out.println("Task 12");
-        createTwoDimensionalRandomArray(3, 4);
+        createDynamicRandomArray(3,4);
         System.out.println("---------------------------------------");
         System.out.println("Task 13");
         System.out.println(sumElementArrayRecursion(0, array));
         System.out.println("---------------------------------------");
         System.out.println("Task 14");
-        System.out.println(Arrays.toString(dynamicArray(array)));
+        System.out.println(Arrays.toString(dynamicArrayIncrease(array, 44)));
         System.out.println("---------------------------------------");
-
     }
 
 
@@ -166,32 +169,31 @@ public class HomeworkTwo {
         return array;
     }
 
-    public static void createTwoDimensionalRandomArray(int a, int b) {
-        int[][] arrayNumber = new int[a][b];
+    public static void createDynamicRandomArray(int line, int column) {
+        int[][] arrayNumber = new int[line][column];
         Random r = new Random();
-        for (int i = 0; i < a; i++) {
-            for (int j = 0; j < b; j++) {
+        for (int i = 0; i < line; i++) {
+            for (int j = 0; j < column; j++) {
                 arrayNumber[i][j] = r.nextInt(100);
                 System.out.print(arrayNumber[i][j] + " ");
-                if (j == (b - 1))
+                if (j == (column - 1))
                     System.out.println();
             }
         }
     }
 
-    public static int sumElementArrayRecursion(int Index, int[] array) {
-        if (Index == (array.length)) {
+    public static int sumElementArrayRecursion(int index, int[] array) {
+        if (index == (array.length)) {
             return 0;
         } else {
-            return array[Index] + sumElementArrayRecursion(Index + 1, array);
+            return array[index] + sumElementArrayRecursion(index + 1, array);
         }
     }
 
-    public static int[] dynamicArray(int[] array) {
+    public static int[] dynamicArrayIncrease(int[] array, int index) {
         System.out.println(Arrays.toString(array));
-        array = Arrays.copyOf(array, array.length + 1);
-        Random r = new Random();
-        array[array.length - 1] = r.nextInt(100) - 50;
+        array = Arrays.copyOf(array, array.length + 50);
+        array[array.length-1] = index;
         return array;
     }
 }
