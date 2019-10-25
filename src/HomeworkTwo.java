@@ -41,17 +41,19 @@ public class HomeworkTwo {
         System.out.println("Task 11");
         System.out.println(Arrays.toString(sortUp(array)));
         System.out.println("---------------------------------------");
-        System.out.println("Task 12");
-        createDynamicRandomArray(3,4);
-        System.out.println("---------------------------------------");
         System.out.println("Task 13");
         System.out.println(sumElementArrayRecursion(0, array));
         System.out.println("---------------------------------------");
         System.out.println("Task 14");
         System.out.println(Arrays.toString(dynamicArrayIncrease(array, 44)));
         System.out.println("---------------------------------------");
+        System.out.println("Task 12");
+        int[][] arrayNumber = createDynamicRandomArray(3, 4);
+        System.out.println("---------------------------------------");
+        System.out.println("Task 15");
+        maxMinArray(arrayNumber);
+        System.out.println("---------------------------------------");
     }
-
 
     public static boolean isPalindrome(String givenString) {
         return givenString.equals((new StringBuilder(givenString)).reverse().toString());
@@ -169,7 +171,7 @@ public class HomeworkTwo {
         return array;
     }
 
-    public static void createDynamicRandomArray(int line, int column) {
+    public static int[][] createDynamicRandomArray(int line, int column) {
         int[][] arrayNumber = new int[line][column];
         Random r = new Random();
         for (int i = 0; i < line; i++) {
@@ -180,6 +182,7 @@ public class HomeworkTwo {
                     System.out.println();
             }
         }
+        return arrayNumber;
     }
 
     public static int sumElementArrayRecursion(int index, int[] array) {
@@ -193,8 +196,43 @@ public class HomeworkTwo {
     public static int[] dynamicArrayIncrease(int[] array, int index) {
         System.out.println(Arrays.toString(array));
         array = Arrays.copyOf(array, array.length + 50);
-        array[array.length-1] = index;
+        array[array.length - 1] = index;
         return array;
+    }
+
+    public static void maxMinArray(int[][] arrayNumber) {
+        int maxi = 0;
+        int maxj = 0;
+        int mini = 0;
+        int minj = 0;
+        int minElem = arrayNumber[0][0];
+        int maxElem = arrayNumber[0][0];
+        for (int i = 0; i < arrayNumber.length; i++) {
+            for (int j = 0; j < arrayNumber.length + 1; j++) {
+                if (arrayNumber[i][j] < minElem) {
+                    minElem = arrayNumber[i][j];
+                    mini = i;
+                    minj = j;
+
+                }
+                if (arrayNumber[i][j] > maxElem) {
+                    maxElem = arrayNumber[i][j];
+                    maxi = i;
+                    maxj = j;
+                }
+            }
+        }
+        System.out.println("Max = " + maxElem);
+        System.out.println("Min = " + minElem);
+        arrayNumber[maxi][maxj] = minElem;
+        arrayNumber[mini][minj] = maxElem;
+        for (int i = 0; i < arrayNumber.length; i++) {
+            for (int j = 0; j < arrayNumber.length + 1; j++) {
+                System.out.print(arrayNumber[i][j] + " ");
+                if (j == (arrayNumber.length))
+                    System.out.println();
+            }
+        }
     }
 }
 
