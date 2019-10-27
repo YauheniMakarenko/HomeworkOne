@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a17ef86b-bea1-44e1-84dd-9f94a7a0ce06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HomeworkTwo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HomeworkOne/HomeworkTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeworkOne/HomeworkTwo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HomeworkTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomeworkTwo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +71,14 @@
       <option name="presentableId" value="Default" />
       <updated>1571751978333</updated>
     </task>
+    <task id="LOCAL-00001" summary="Lesson 1">
+      <created>1571758787460</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571758787460</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,10 +86,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lesson 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 1" />
   </component>
 </project>
