@@ -20,7 +20,9 @@ public class HomeworkThree {
         System.out.println(differenceBetweenMinAndMaxElementArray(array));
         System.out.println("---------------------------------------");
         System.out.println("Task 4");
-        System.out.println(samenessCheck(array, array));
+        int[] oneArray = {5, 4, 8, 6, 9, 1, 2, 25};
+        int[] twoArray = {1, 9, 8, 45, 15, 52};
+        System.out.println(samenessCheck(oneArray, twoArray));
         System.out.println("---------------------------------------");
         System.out.println("Task 5");
         int[] newArray = {5, 8, 2, 0, 3, 9, 6, 1, 7, 4};
@@ -33,7 +35,7 @@ public class HomeworkThree {
         printTwoDimensionalArray(swapMaxMinElementArray(array));
         System.out.println("---------------------------------------");
         System.out.println("Task 8");
-        notEvenElementReplace(array);
+        oddElementReplace(array);
         System.out.println("---------------------------------------");
         System.out.println("Task 9");
         multiplicationDiagonalElement(createTwoDimensionalArray(), 7);
@@ -90,7 +92,7 @@ public class HomeworkThree {
         int[][] array = new int[LENGTH][WIDTH];
         for (int i = 0; i < LENGTH; i++) {
             for (int j = 0; j < WIDTH; j++) {
-                array[i][j] = R.nextInt(40);
+                array[i][j] = R.nextInt(30);
             }
         }
         return array;
@@ -116,8 +118,13 @@ public class HomeworkThree {
         return maxElem - minElem;
     }
 
-    public static boolean samenessCheck(int[][] givenArrayOne, int[][] givenArrayTwo) {
-        return givenArrayOne == givenArrayTwo;
+    public static boolean samenessCheck(int[] givenArrayOne, int[] givenArrayTwo) {
+        for (int i = 0; i < givenArrayOne.length; i++) {
+            if (givenArrayOne[i] != givenArrayTwo[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static int findMissingNumber(int[] givenArray) {
@@ -125,8 +132,7 @@ public class HomeworkThree {
         for (int i = 0; i < givenArray.length; i++) {
             sum += givenArray[i];
         }
-        int missingNumber = ((givenArray.length + 1) * givenArray.length / 2) - sum;
-        return missingNumber;
+        return ((givenArray.length + 1) * givenArray.length / 2) - sum;
     }
 
     public static int minElementArray(int[][] givenArray) {
@@ -146,10 +152,11 @@ public class HomeworkThree {
         int maxj = 0;
         int mini = 0;
         int minj = 0;
+        int minElement = minElementArray(givenArray);
         int maxElement = givenArray[0][0];
         for (int i = 0; i < givenArray.length; i++) {
             for (int j = 0; j < givenArray[i].length; j++) {
-                if (givenArray[i][j] == minElementArray(givenArray)) {
+                if (givenArray[i][j] == minElement) {
                     mini = i;
                     minj = j;
                 }
@@ -166,16 +173,15 @@ public class HomeworkThree {
         return givenArray;
     }
 
-    public static int[][] notEvenElementReplace(int[][] givenArray) {
+    public static int[][] oddElementReplace(int[][] givenArray) {
         printTwoDimensionalArray(givenArray);
         System.out.println();
         for (int i = 0; i < givenArray.length; i++) {
             for (int j = 0; j < givenArray[i].length; j++) {
-                if (givenArray[i][j] % 2 != 0) {
-                    if (givenArray[i][j] == givenArray[i][0]) {
-                        givenArray[i][j] = 0;       //меняем все нечетные элементы по счётчику j == 0, на 0
-                    } else
-                        givenArray[i][j] = givenArray[i][j - 1];
+                if (givenArray[i][0] % 2 != 0) {
+                    givenArray[i][j] = 0;
+                } else if (givenArray[i][j] % 2 != 0) {
+                    givenArray[i][j] = givenArray[i][j - 1];
                 }
             }
         }
