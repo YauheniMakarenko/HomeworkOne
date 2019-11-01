@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class HomeworkThree {
 
@@ -38,7 +39,7 @@ public class HomeworkThree {
         oddElementReplace(array);
         System.out.println("---------------------------------------");
         System.out.println("Task 9");
-        multiplicationDiagonalElement(createTwoDimensionalArray(), 7);
+        multiplicationDiagonalElement(createTwoDimensionalArray());
         System.out.println("---------------------------------------");
         System.out.println("Task 10");
         Holiday.CHRISTMAS.print();
@@ -189,14 +190,24 @@ public class HomeworkThree {
         return givenArray;
     }
 
-    public static int multiplicationDiagonalElement(int[][] givenArray, int index) {
+    public static int multiplicationDiagonalElement(int[][] givenArray) {
         printTwoDimensionalArray(givenArray);
         System.out.println();
+        Scanner scanner = new Scanner(System.in);
+        int index = scanner.nextInt();
         int rezult = 1;
-        for (int i = 1; i < givenArray.length - 1; i++) {
-            for (int j = 1; j < givenArray[i].length - 1; j++) {
+        for (int i = 0; i < givenArray.length; i++) {
+            for (int j = 0; j < givenArray[i].length; j++) {
                 if (givenArray[i][j] == index) {
-                    rezult = givenArray[i - 1][j - 1] * givenArray[i + 1][j + 1] * givenArray[i + 1][j - 1] * givenArray[i - 1][j + 1];
+                    int t = i;
+                    int k = j;
+                    for (int i2 = 0; i2 < givenArray[0].length; i2++) {
+                        for (int j2 = 0; j2 < givenArray[1].length; j2++) {
+                            if (i2 == t + 1 && j2 == k + 1 || i2 == t - 1 && j2 == k - 1 || i2 == t - 1 && j2 == k + 1 || i2 == t + 1 && j2 == k - 1) {
+                                rezult = rezult * givenArray[i2][j2];
+                            }
+                        }
+                    }
                 }
             }
         }
