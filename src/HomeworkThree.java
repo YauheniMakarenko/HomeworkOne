@@ -196,6 +196,7 @@ public class HomeworkThree {
         Scanner scan = new Scanner(System.in);
         int index = scan.nextInt();
         int rezult = 1;
+
         for (int i = 0; i < givenArray.length; i++) {
             for (int j = 0; j < givenArray[i].length; j++) {
                 if (givenArray[i][j] == index) {
