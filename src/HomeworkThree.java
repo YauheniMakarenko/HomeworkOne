@@ -193,10 +193,8 @@ public class HomeworkThree {
     public static int multiplicationDiagonalElement(int[][] givenArray) {
         printTwoDimensionalArray(givenArray);
         System.out.println();
-
         Scanner scan = new Scanner(System.in);
         int index = scan.nextInt();
-        System.out.println("число " + index);
         int rezult = 1;
         for (int i = 0; i < givenArray.length; i++) {
             for (int j = 0; j < givenArray[i].length; j++) {
