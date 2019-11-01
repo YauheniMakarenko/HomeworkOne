@@ -199,11 +199,9 @@ public class HomeworkThree {
         for (int i = 0; i < givenArray.length; i++) {
             for (int j = 0; j < givenArray[i].length; j++) {
                 if (givenArray[i][j] == index) {
-                    int t = i;
-                    int k = j;
                     for (int i2 = 0; i2 < givenArray.length; i2++) {
                         for (int j2 = 0; j2 < givenArray[i].length; j2++) {
-                            if (i2 == t + 1 && j2 == k + 1 || i2 == t - 1 && j2 == k - 1 || i2 == t - 1 && j2 == k + 1 || i2 == t + 1 && j2 == k - 1) {
+                            if (i2 == i + 1 && j2 == j + 1 || i2 == i - 1 && j2 == j - 1 || i2 == i - 1 && j2 == j + 1 || i2 == i + 1 && j2 == j - 1) {
                                 rezult = rezult * givenArray[i2][j2];
                             }
                         }
