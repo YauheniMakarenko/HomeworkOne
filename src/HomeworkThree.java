@@ -38,8 +38,8 @@ public class HomeworkThree {
         System.out.println("Task 8");
         oddElementReplace(array);
         System.out.println("---------------------------------------");
-        System.out.println("Task 9");
-        multiplicationDiagonalElement(createTwoDimensionalArray());
+        System.out.println("Task 9.1");
+        findMultiplicationOfDiagonalElements(createTwoDimensionalArray());
         System.out.println("---------------------------------------");
         System.out.println("Task 10");
         Holiday.CHRISTMAS.print();
@@ -190,13 +190,13 @@ public class HomeworkThree {
         return givenArray;
     }
 
-    public static int multiplicationDiagonalElement(int[][] givenArray) {
+    public static int findMultiplicationOfDiagonalElements(int[][] givenArray) {
         printTwoDimensionalArray(givenArray);
         System.out.println();
         Scanner scan = new Scanner(System.in);
         int index = scan.nextInt();
         int rezult = 1;
-
+        outer:
         for (int i = 0; i < givenArray.length; i++) {
             for (int j = 0; j < givenArray[i].length; j++) {
                 if (givenArray[i][j] == index) {
@@ -207,6 +207,7 @@ public class HomeworkThree {
                             }
                         }
                     }
+                    break outer;
                 }
             }
         }
