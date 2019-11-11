@@ -3,7 +3,8 @@ package HomeworkFour;
 public class Sphere extends Figure {
     private int radius;
 
-    public Sphere(int radius) {
+    public Sphere(String name, int radius) {
+        super(name);
         this.radius = radius;
     }
 
@@ -12,11 +13,6 @@ public class Sphere extends Figure {
     }
     public int getRadius(){
         return radius;
-    }
-
-    @Override
-    public String getName() {
-        return "Sphere";
     }
 
     @Override

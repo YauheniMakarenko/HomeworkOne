@@ -4,7 +4,8 @@ public class Square extends Figure {
 
     private int length;
 
-    public Square(int length) {
+    public Square(String name, int length) {
+        super(name);
         this.length = length;
     }
 
@@ -16,10 +17,6 @@ public class Square extends Figure {
         return length;
     }
 
-    @Override
-    public String getName(){
-        return "Square";
-    }
 
     @Override
     public double periment() {

@@ -4,7 +4,8 @@ public class Rectangle extends Figure {
     private int length;
     private int width;
 
-    public Rectangle(int length, int width) {
+    public Rectangle(String name, int length, int width) {
+        super(name);
         this.length = length;
         this.width = width;
     }
@@ -23,11 +24,6 @@ public class Rectangle extends Figure {
 
     public int getWidth(){
         return width;
-    }
-
-    @Override
-    public String getName() {
-        return "Rectangle";
     }
 
     @Override

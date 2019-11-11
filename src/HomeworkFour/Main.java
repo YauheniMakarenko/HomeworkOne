@@ -6,25 +6,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Figure square = new Square(15);
+        Figure square = new Square("Square",15);
         System.out.println(square.toString());
         System.out.println("Periment: " + square.periment());
         System.out.println("Area: " + square.area());
         System.out.println();
 
-        Figure rectangle = new Rectangle(4, 5);
+        Figure rectangle = new Rectangle("Rectangle",4, 5);
         System.out.println(rectangle.toString());
         System.out.println("Periment: " + rectangle.periment());
         System.out.println("Area: " + rectangle.area());
         System.out.println();
 
-        Figure circle = new Circle(5);
+        Figure circle = new Circle("Circle",5);
         System.out.println(circle.toString());
         System.out.println("Periment: " + circle.periment());
         System.out.println("Area: " + circle.area());
         System.out.println();
 
-        Figure ball = new Sphere(7);
+        Figure ball = new Sphere("Sphere",7);
         System.out.println(ball.toString());
         System.out.println("Periment: " + ball.periment());
         System.out.println("Area: " + ball.area());
@@ -37,8 +37,8 @@ public class Main {
         picture.addToList(rectangle);
         picture.addToList(circle);
         picture.addToList(ball);
-        picture.addToList(new Square(10));
-        picture.addToList(new Circle( 5));
+        picture.addToList(new Square("Square",10));
+        picture.addToList(new Circle( "Circle",5));
         System.out.println(picture.namesOfFigures());
         System.out.println(picture.sumPerimetersOfFigures());
         System.out.println(picture.sumAreasOfFigures());

@@ -1,8 +1,6 @@
 package HomeworkFour.Ships;
 
-public class Cell {
-
-
+public class Field {
     static int SIZE = 10;
     private char[][] cell = new char[SIZE][SIZE];
     private final int[] DECK = {4, 3, 3, 2, 2, 2, 1, 1, 1, 1};
@@ -47,28 +45,27 @@ public class Cell {
     }
 
     boolean coincideShip(Ship ship) {
-
-        if (ship.rnd == 0) {
-            for (int i = 0; i < ship.size; i++) {
+        if (ship.getRnd() == 0) {
+            for (int i = 0; i < ship.getSize(); i++) {
                 for (int dy = -1; dy < 2; dy++) {
                     for (int dx = -1; dx < 2; dx++) {
-                        if (ship.positionY + dy + i < 0 || ship.positionY + dy + i >= SIZE || ship.positionX + dx < 0 || ship.positionX + dx >= SIZE) {
+                        if (ship.getPositionY() + dy + i < 0 || ship.getPositionY() + dy + i >= SIZE || ship.getPositionX() + dx < 0 || ship.getPositionX() + dx >= SIZE) {
                             continue;
                         }
-                        if (cell[ship.positionY + dy + i][ship.positionX + dx] == '#') {
+                        if (cell[ship.getPositionY() + dy + i][ship.getPositionX() + dx] == '#') {
                             return true;
                         }
                     }
                 }
             }
         } else {
-            for (int i = 0; i < ship.size; i++) {
+            for (int i = 0; i < ship.getSize(); i++) {
                 for (int dy = -1; dy < 2; dy++) {
                     for (int dx = -1; dx < 2; dx++) {
-                        if (ship.positionY + dy < 0 || ship.positionY + dy >= SIZE || ship.positionX + dx + i < 0 || ship.positionX + dx + i >= SIZE) {
+                        if (ship.getPositionY() + dy < 0 || ship.getPositionY() + dy >= SIZE || ship.getPositionX() + dx + i < 0 || ship.getPositionX() + dx + i >= SIZE) {
                             continue;
                         }
-                        if (cell[ship.positionY + dy][ship.positionX + dx + i] == '#') {
+                        if (cell[ship.getPositionY() + dy][ship.getPositionX() + dx + i] == '#') {
                             return true;
                         }
                     }
@@ -80,13 +77,13 @@ public class Cell {
     }
 
     void drawnShip(Ship tmpShip) {
-        if (tmpShip.rnd == 0) {
-            for (int i = 0; i < tmpShip.size; i++) {
-                cell[tmpShip.positionY + i][tmpShip.positionX] = '#';
+        if (tmpShip.getRnd() == 0) {
+            for (int i = 0; i < tmpShip.getSize(); i++) {
+                cell[tmpShip.getPositionY() + i][tmpShip.getPositionX()] = '#';
             }
         } else {
-            for (int i = 0; i < tmpShip.size; i++) {
-                cell[tmpShip.positionY][tmpShip.positionX + i] = '#';
+            for (int i = 0; i < tmpShip.getSize(); i++) {
+                cell[tmpShip.getPositionY()][tmpShip.getPositionX() + i] = '#';
             }
         }
     }
