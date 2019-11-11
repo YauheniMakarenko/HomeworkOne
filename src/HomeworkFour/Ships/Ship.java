@@ -9,7 +9,7 @@ public class Ship {
     private int positionY;
     private int rnd;
 
-    Ship(int Deck) {
+    public Ship(int Deck) {
         this.size = Deck;
     }
 
@@ -45,7 +45,7 @@ public class Ship {
         this.rnd = rnd;
     }
 
-    void initWithRandom() {
+    public void initWithRandom() {
         Random random = new Random();
         positionX = random.nextInt((Field.SIZE - size) + 1);
         positionY = random.nextInt((Field.SIZE - size) + 1);

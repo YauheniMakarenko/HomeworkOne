@@ -39,7 +39,7 @@ public class Picture {
         return sum;
     }
 
-    public Map countDifferentFigures() {
+    public Map<String, Integer> countDifferentFigures() {
         for (int i = 0; i < list.size(); i++) {
             Integer count = 0;
             for (int j = 0; j < list.size(); j++) {

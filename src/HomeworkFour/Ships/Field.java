@@ -1,12 +1,13 @@
 package HomeworkFour.Ships;
 
 public class Field {
-    static int SIZE = 10;
+
+    public static final int SIZE = 10;
     private char[][] cell = new char[SIZE][SIZE];
     private final int[] DECK = {4, 3, 3, 2, 2, 2, 1, 1, 1, 1};
-    Ship[] ships = new Ship[DECK.length];
+    private Ship[] ships = new Ship[DECK.length];
 
-    void fillField() {
+    public void createFieldForShips() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 cell[i][j] = '.';
@@ -14,7 +15,7 @@ public class Field {
         }
     }
 
-    void viewField() {
+    public void outputFieldWithShipsLocated() {
         System.out.println();
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -24,7 +25,7 @@ public class Field {
         }
     }
 
-    void shipOnTheField() {
+    public void generateShipsAtRandomLocations() {
         for (int i = 0; i < DECK.length; i++) {
             Ship tmpShip = new Ship(DECK[i]);
             boolean isIntersect;
@@ -44,7 +45,7 @@ public class Field {
         }
     }
 
-    boolean coincideShip(Ship ship) {
+    public boolean coincideShip(Ship ship) {
         if (ship.getRnd() == 0) {
             for (int i = 0; i < ship.getSize(); i++) {
                 for (int dy = -1; dy < 2; dy++) {
@@ -76,7 +77,7 @@ public class Field {
         return false;
     }
 
-    void drawnShip(Ship tmpShip) {
+    public void drawnShip(Ship tmpShip) {
         if (tmpShip.getRnd() == 0) {
             for (int i = 0; i < tmpShip.getSize(); i++) {
                 cell[tmpShip.getPositionY() + i][tmpShip.getPositionX()] = '#';
