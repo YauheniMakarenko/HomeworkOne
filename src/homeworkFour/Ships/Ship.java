@@ -1,4 +1,4 @@
-package HomeworkFour.Ships;
+package homeworkFour.Ships;
 
 import java.util.Random;
 
@@ -9,8 +9,8 @@ public class Ship {
     private int positionY;
     private int rnd;
 
-    public Ship(int Deck) {
-        this.size = Deck;
+    public Ship(int DECK) {
+        this.size = DECK * Field.getShipSizeMultiplier();
     }
 
     public int getSize() {
@@ -47,8 +47,8 @@ public class Ship {
 
     public void initWithRandom() {
         Random random = new Random();
-        positionX = random.nextInt((Field.SIZE - size) + 1);
-        positionY = random.nextInt((Field.SIZE - size) + 1);
+        positionX = random.nextInt((Field.getSizeField() - size) + 1);
+        positionY = random.nextInt((Field.getSizeField() - size) + 1);
 
         rnd = random.nextInt(2);
     }

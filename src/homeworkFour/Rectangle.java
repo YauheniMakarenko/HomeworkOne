@@ -1,4 +1,4 @@
-package HomeworkFour;
+package homeworkFour;
 
 public class Rectangle extends Figure {
     private int length;

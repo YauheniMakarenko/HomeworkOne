@@ -1,4 +1,4 @@
-package HomeworkFour;
+package homeworkFour;
 
 public class Circle extends Figure{
     private int radius;

@@ -1,4 +1,4 @@
-package HomeworkFour;
+package homeworkFour;
 
 public abstract class Figure {
     private String name;
