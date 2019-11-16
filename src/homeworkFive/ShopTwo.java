@@ -1,18 +1,19 @@
 package homeworkFive;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ShopTwo implements ShopInterface {
     private Map<Product, Integer> mapProduct = new HashMap<>();
+    private Map<String, Integer> mapCheck = new HashMap();
 
     public Map<Product, Integer> getMapProduct() {
         return mapProduct;
     }
 
     public void addProductShop(Product product) {
-        //mapProduct.put(product, count);
         if (!mapProduct.containsKey(product)) {
             mapProduct.put(product, 1);
         } else {
@@ -21,19 +22,27 @@ public class ShopTwo implements ShopInterface {
     }
 
     public Map<String, Integer> getCheck(List<Integer> list) {
-        Map<String, Integer> mapCheck = new HashMap();
-        String nameProduct = "";
         int count;
         for (Map.Entry<Product, Integer> p : mapProduct.entrySet()) {
             count = 0;
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i) == p.getKey().getId()) {
                     count++;
-                    nameProduct = p.getKey().getName();
-                    mapCheck.put(nameProduct, count);
+                    mapCheck.put(p.getKey().getName(), count);
                 }
             }
             mapProduct.put(p.getKey(), p.getValue() - count);
+        }
+        return mapCheck;
+    }
+
+    public Map<String, Integer> getCheck1(List<Integer> list) {
+        for (Map.Entry<Product, Integer> p : mapProduct.entrySet()) {
+            int count = Collections.frequency(list, p.getKey().getId());
+            if (count > 0) {
+                mapCheck.put(p.getKey().getName(), count);
+                mapProduct.put(p.getKey(), p.getValue() - count);
+            }
         }
         return mapCheck;
     }

@@ -10,7 +10,7 @@ public class Main {
         Product keyboard2 = new Keyboard(1230, "A4Tech",180);
         Product monitor = new Monitor(2244, "BENQ", 230);
 
-        ShopOne shopOne = new ShopOne();
+        /*ShopOne shopOne = new ShopOne();
         shopOne.addProductShop(keyboard1);
         shopOne.addProductShop(keyboard2);
         shopOne.addProductShop(mouse);
@@ -25,7 +25,7 @@ public class Main {
         list.add(2244);
         list.add(2244);
         shopOne.printCheck(list);
-        System.out.println("########################");
+        System.out.println("########################");*/
 
         ShopTwo shopTwo = new ShopTwo();
         shopTwo.addProductShop(keyboard1);
