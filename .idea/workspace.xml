@@ -4,13 +4,8 @@
     <list default="true" id="a17ef86b-bea1-44e1-84dd-9f94a7a0ce06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HomeworkOne/homeworkFive/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeworkOne/homeworkFive/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeworkOne/homeworkFive/ShopInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeworkOne/homeworkFive/ShopInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeworkOne/homeworkFive/ShopOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeworkOne/homeworkFive/ShopOne.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeworkOne/homeworkFive/ShopTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeworkOne/homeworkFive/ShopTwo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/homeworkFive/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/homeworkFive/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homeworkFive/ShopInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/homeworkFive/ShopInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homeworkFive/ShopOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/homeworkFive/ShopOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homeworkFive/ShopTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/homeworkFive/ShopTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homeworkFive/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/homeworkFive/Product.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +29,12 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HomeworkTwo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/asd" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ola_t\IdeaProjects\HomeworkOne\src\asd" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ola_t\IdeaProjects\HomeworkOne\src\HomeworkFour" />
     </key>
@@ -53,7 +51,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="asd.homeworkFive.Main" />
+      <module name="HomeworkOne" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="asd.homeworkFive.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="homeworkFive.Main" />
       <module name="HomeworkOne" />
@@ -122,6 +133,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>

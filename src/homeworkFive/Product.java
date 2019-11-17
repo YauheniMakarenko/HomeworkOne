@@ -1,11 +1,13 @@
 package homeworkFive;
 
+import java.util.Objects;
+
 public abstract class Product {
     private String name;
     private int id;
     private double price;
 
-    public Product(int id, String name, double price){
+    public Product(int id, String name, double price) {
         this.id = id;
         this.price = price;
         this.name = name;
@@ -36,7 +38,41 @@ public abstract class Product {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Product)) {
+            return false;
+        }
+        Product product = (Product) obj;
+        if (getId() != product.getId()) {
+            return false;
+        }
+        if (!getName().equals(product.getName())){
+            return false;
+        }
+        if (Double.compare(product.getPrice(), getPrice()) != 0) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        long temp = Double.doubleToLongBits(getPrice());
+        int result = 1;
+        result = prime * result * getId() + (int) (temp ^ (temp >>> prime + 1));
+        result = prime * result + getName().hashCode();
+        return result;
     }
 }

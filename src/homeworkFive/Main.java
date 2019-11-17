@@ -50,7 +50,6 @@ public class Main {
         list2.add(2244);
         list2.add(0001);
         shopTwo.printCheck(shopTwo.getCheck(list2));
-
         System.out.println("Осталось: " + shopTwo.getMapProduct());
 
     }
