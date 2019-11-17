@@ -10,12 +10,11 @@ public class Main {
         Product keyboard2 = new Keyboard(1230, "A4Tech",180);
         Product monitor = new Monitor(2244, "BENQ", 230);
 
-        /*ShopOne shopOne = new ShopOne();
+        ShopOne shopOne = new ShopOne();
         shopOne.addProductShop(keyboard1);
         shopOne.addProductShop(keyboard2);
         shopOne.addProductShop(mouse);
         shopOne.addProductShop(monitor);
-
         List list = new ArrayList();
         list.add(1010);
         list.add(1010);
@@ -24,25 +23,35 @@ public class Main {
         list.add(0001);
         list.add(2244);
         list.add(2244);
-        shopOne.printCheck(list);
-        System.out.println("########################");*/
+        shopOne.printCheck(shopOne.getCheck(list));
+        System.out.println("########################");
 
         ShopTwo shopTwo = new ShopTwo();
         shopTwo.addProductShop(keyboard1);
         shopTwo.addProductShop(keyboard1);
         shopTwo.addProductShop(keyboard1);
         shopTwo.addProductShop(keyboard2);
+        shopTwo.addProductShop(keyboard2);
+        shopTwo.addProductShop(monitor);
         shopTwo.addProductShop(monitor);
         shopTwo.addProductShop(monitor);
         shopTwo.addProductShop(mouse);
-        System.out.println("Количество товаров в магазине: " + shopTwo.getMapProduct());
+        shopTwo.addProductShop(mouse);
+
 
         List list2 = new ArrayList();
         list2.add(1010);
         list2.add(1010);
         list2.add(1010);
+        list2.add(1010);
         list2.add(2244);
-        shopTwo.printCheck(list2);
-        System.out.println("Осталось товаров в магазине: " + shopTwo.getMapProduct());
+        list2.add(2244);
+        list2.add(2244);
+        list2.add(2244);
+        list2.add(0001);
+        shopTwo.printCheck(shopTwo.getCheck(list2));
+
+        System.out.println("Осталось: " + shopTwo.getMapProduct());
+
     }
 }

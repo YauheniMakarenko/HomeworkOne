@@ -5,5 +5,5 @@ import java.util.Map;
 
 public interface ShopInterface {
     void addProductShop(Product product);
-    Map getCheck(List<Integer> list);
+    Check getCheck(List<Integer> list);
 }

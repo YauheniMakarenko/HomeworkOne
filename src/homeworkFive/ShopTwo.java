@@ -1,13 +1,11 @@
 package homeworkFive;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ShopTwo implements ShopInterface {
     private Map<Product, Integer> mapProduct = new HashMap<>();
-    private Map<String, Integer> mapCheck = new HashMap();
+    private Map<Integer, Product> mapIdToProduct = new HashMap<>();
+
 
     public Map<Product, Integer> getMapProduct() {
         return mapProduct;
@@ -19,57 +17,32 @@ public class ShopTwo implements ShopInterface {
         } else {
             mapProduct.put(product, mapProduct.get(product) + 1);
         }
+        mapIdToProduct.put(product.getId(), product);
     }
 
-    public Map<String, Integer> getCheck(List<Integer> list) {
-        int count;
-        for (Map.Entry<Product, Integer> p : mapProduct.entrySet()) {
-            count = 0;
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i) == p.getKey().getId()) {
-                    count++;
-                    mapCheck.put(p.getKey().getName(), count);
-                }
-            }
-            mapProduct.put(p.getKey(), p.getValue() - count);
-        }
-        return mapCheck;
-    }
-
-    public Map<String, Integer> getCheck1(List<Integer> list) {
-        for (Map.Entry<Product, Integer> p : mapProduct.entrySet()) {
-            int count = Collections.frequency(list, p.getKey().getId());
-            if (count > 0) {
-                mapCheck.put(p.getKey().getName(), count);
-                mapProduct.put(p.getKey(), p.getValue() - count);
-            }
-        }
-        return mapCheck;
-    }
-
-    public double getTotalPrice(List<Integer> list) {
-        double sum = 0;
-        double total = 0;
+    public Check getCheck(List<Integer> list){
+        Check check = new Check();
         for (int i = 0; i < list.size(); i++) {
-            for (Map.Entry<Product, Integer> p : mapProduct.entrySet()) {
-                if (list.get(i) == p.getKey().getId()) {
-                    total = p.getKey().getPrice();
-                }
+            addToCheck(list.get(i), check);
+        }
+        return check;
+    }
+
+    public void addToCheck(Integer idProduct, Check check) {
+        Integer countProduct = mapProduct.get(mapIdToProduct.get(idProduct));
+        Product product = mapIdToProduct.get(idProduct);
+        if (mapIdToProduct.containsKey(idProduct)) {
+            if (countProduct <= 1) {
+                mapProduct.remove(product);
+                mapIdToProduct.remove(idProduct);
+            } else {
+                mapProduct.put(product, countProduct - 1);
             }
-            sum += total;
+            check.addProductInCheck(product);
         }
-        return sum;
     }
 
-    public void printCheck(List<Integer> list) {
-        Map<String, Integer> mapRez = getCheck(list);
-        System.out.println("  Check:");
-        System.out.println("------------------------");
-        for (Map.Entry<String, Integer> map : mapRez.entrySet()) {
-            System.out.println(map.getKey() + " " + map.getValue() + "шт.");
-        }
-        System.out.println("------------------------");
-        System.out.println("  Total: " + getTotalPrice(list));
+    public void printCheck(Check check) {
+        check.generateCheck();
     }
-
 }
