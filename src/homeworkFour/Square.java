@@ -1,4 +1,4 @@
-package HomeworkFour;
+package homeworkFour;
 
 public class Square extends Figure {
 

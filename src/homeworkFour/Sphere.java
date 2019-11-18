@@ -1,4 +1,4 @@
-package HomeworkFour;
+package homeworkFour;
 
 public class Sphere extends Figure {
     private int radius;
