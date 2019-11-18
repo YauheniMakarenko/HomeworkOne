@@ -28,7 +28,7 @@ public class ShopTwo implements ShopInterface {
         return check;
     }
 
-    public void addToCheck(Integer idProduct, Check check) {
+    private void addToCheck(Integer idProduct, Check check) {
         Integer countProduct = mapProduct.get(mapIdToProduct.get(idProduct));
         Product product = mapIdToProduct.get(idProduct);
         if (mapIdToProduct.containsKey(idProduct)) {

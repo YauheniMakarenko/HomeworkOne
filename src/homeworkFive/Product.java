@@ -1,7 +1,5 @@
 package homeworkFive;
 
-import java.util.Objects;
-
 public abstract class Product {
     private String name;
     private int id;
@@ -49,9 +47,6 @@ public abstract class Product {
         }
         if (this == obj) {
             return true;
-        }
-        if (!(obj instanceof Product)) {
-            return false;
         }
         Product product = (Product) obj;
         if (getId() != product.getId()) {

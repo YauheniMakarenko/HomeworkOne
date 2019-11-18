@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ShopOne implements ShopInterface  {
+
     public List<Product> getProductList() {
         return productList;
     }
