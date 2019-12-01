@@ -1,11 +1,11 @@
 package homeworkFive;
 
-public abstract class Product {
+public class Product {
     private final String name;
     private final int id;
-    private final double price;
+    private final int price;
 
-    public Product(int id, String name, double price) {
+    public Product(int id, String name, int price) {
         this.id = id;
         this.price = price;
         this.name = name;
@@ -19,13 +19,24 @@ public abstract class Product {
         return id;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
     @Override
     public String toString() {
-        return name;
+        return "Product{" +
+                "id:" + id +
+                ", name:'" + name + '\'' +
+                ", price:" + price +
+                '}';
+    }
+
+    public String toJSON(){
+        return "{\n\"type\":\""+this.getClass().getName().substring(this.getClass().getName().lastIndexOf(".")+1)+"\""+"," +
+                "\n\"id\":" + id +
+                ",\n\"name\":\"" + name + "\"" +
+                ",\n\"price\":" + price + "\n}";
     }
 
     @Override
@@ -43,16 +54,13 @@ public abstract class Product {
         if (!getName().equals(product.getName())){
             return false;
         }
-        if (Double.compare(product.getPrice(), getPrice()) != 0) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
-        long temp = Double.doubleToLongBits(getPrice());
+        long temp = getPrice();
         int result = 1;
         result = prime * result * getId() + (int) (temp ^ (temp >>> prime + 1));
         result = prime * result + getName().hashCode();

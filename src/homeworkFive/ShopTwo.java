@@ -11,7 +11,16 @@ public class ShopTwo implements ShopInterface {
         return mapProduct;
     }
 
+    public void addProductShop(List<Product> list){
+        for (int i = 0; i < list.size(); i++) {
+            addProductShop(list.get(i));
+        }
+    }
+
     public void addProductShop(Product product) {
+        if (product == null) {
+            return;
+        }
         if (!mapProduct.containsKey(product)) {
             mapProduct.put(product, 1);
         } else {
@@ -21,6 +30,9 @@ public class ShopTwo implements ShopInterface {
     }
 
     public Check getCheck(List<Integer> list){
+        if (list == null) {
+            return null;
+        }
         Check check = new Check();
         for (int i = 0; i < list.size(); i++) {
             addToCheck(list.get(i), check);
