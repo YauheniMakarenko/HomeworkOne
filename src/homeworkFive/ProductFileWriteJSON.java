@@ -5,40 +5,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductFileWriteJSON {
-    private List<String> listProduct = new ArrayList<>();
-
 
     public void addProductInFile(Product product, String fileName) throws IOException {
+        List<String> listProduct = new ArrayList<>();
         if ((listProduct.size() == 0 && (overwriteExistingProducts(fileName).length() == 0))) {
             listProduct.add("[\n");
         }
-        String string = product.toJSON();
+        String string = toJSON(product);
         if (listProduct == null) {
             listProduct.add(string + ",\n");
         } else {
             listProduct.add(string + "\n]");
         }
+        fileWrite(listProduct ,fileName);
 
-        fileWrite(fileName);
     }
 
     public void addProductInFile(List<Product> product, String fileName) throws IOException {
-
-        for (int i = 0; i < product.size(); i++) {
-            if ((listProduct.size() == 0 && (overwriteExistingProducts(fileName).length() == 0))) {
-                listProduct.add("[\n");
-            }
-            String string = product.get(i).toJSON();
-            if (i < product.size() - 1) {
-                listProduct.add(string + ",\n");
-            } else {
-                listProduct.add(string + "\n]");
-            }
+        for (int i = 0; i < product.size(); i++){
+            addProductInFile(product.get(i), fileName);
         }
-        fileWrite(fileName);
     }
 
-    private void fileWrite(String fileName) throws IOException {
+    private void fileWrite(List<String> listProduct ,String fileName) throws IOException {
         String string = overwriteExistingProducts(fileName);
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
         if (string != null) {
@@ -48,7 +37,6 @@ public class ProductFileWriteJSON {
             bufferedWriter.append(listProduct.get(i));
         }
         bufferedWriter.close();
-        listProduct = new ArrayList<>();
     }
 
     private String overwriteExistingProducts(String fileName) {
@@ -69,5 +57,12 @@ public class ProductFileWriteJSON {
             e.printStackTrace();
         }
         return rez;
+    }
+
+    public String toJSON(Product product){
+        return "{\n\"type\":\""+ product.getClass().getName().substring(this.getClass().getName().lastIndexOf(".")+1)+"\""+"," +
+                "\n\"id\":" + product.getId() +
+                ",\n\"name\":\"" + product.getName() + "\"" +
+                ",\n\"price\":" + product.getPrice() + "\n}";
     }
 }

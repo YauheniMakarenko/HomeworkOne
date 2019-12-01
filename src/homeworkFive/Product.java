@@ -32,13 +32,6 @@ public class Product {
                 '}';
     }
 
-    public String toJSON(){
-        return "{\n\"type\":\""+this.getClass().getName().substring(this.getClass().getName().lastIndexOf(".")+1)+"\""+"," +
-                "\n\"id\":" + id +
-                ",\n\"name\":\"" + name + "\"" +
-                ",\n\"price\":" + price + "\n}";
-    }
-
     @Override
     public boolean equals(Object obj) {
         if (obj == null || getClass() != obj.getClass()) {

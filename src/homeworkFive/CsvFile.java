@@ -22,7 +22,7 @@ public class CsvFile {
     }
 
     private static Product createProduct(String productString) {
-        String[] split = productString.split(";");
+        String[] split = productString.split(",");
         Product product1 = new Product(
                 Integer.parseInt(split[0]),
                 split[1],
@@ -35,7 +35,7 @@ public class CsvFile {
     public void addProductInFile(Product product, String fileName) {
         try(FileWriter fileWriter = new FileWriter(fileName, true)) {
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.append(product.getId() + ";" + product.getName() + ";" + product.getPrice() + "\n");
+            bufferedWriter.append(product.getId() + "," + product.getName() + "," + product.getPrice() + "\n");
             bufferedWriter.close();
         }catch (Exception e){
             System.out.println(e.getMessage());
@@ -43,14 +43,8 @@ public class CsvFile {
     }
 
     public void addProductInFile(List<Product> product, String fileName) {
-        try(FileWriter fileWriter = new FileWriter(fileName, true)) {
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            for (int i = 0; i < product.size(); i++) {
-                bufferedWriter.append(product.get(i).getId() + ";" + product.get(i).getName() + ";" + product.get(i).getPrice() + "\n");
-            }
-            bufferedWriter.close();
-        }catch (Exception e){
-            System.out.println(e.getMessage());
+        for (int i = 0; i < product.size(); i++){
+            addProductInFile(product.get(i), fileName);
         }
     }
 }

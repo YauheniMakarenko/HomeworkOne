@@ -30,10 +30,10 @@ public class ShopTwo implements ShopInterface {
     }
 
     public Check getCheck(List<Integer> list){
-        if (list == null) {
-            return null;
-        }
         Check check = new Check();
+        if (list == null) {
+            return check;
+        }
         for (int i = 0; i < list.size(); i++) {
             addToCheck(list.get(i), check);
         }

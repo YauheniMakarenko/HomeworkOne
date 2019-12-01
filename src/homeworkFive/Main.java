@@ -17,7 +17,8 @@ public class Main {
         list.add(keyboard1);
 
         CsvFile csvFile = new CsvFile();
-        csvFile.addProductInFile(list, "productsInShopCSV.csv");  //Можно лист передать!
+        csvFile.addProductInFile(mouse, "productsInShopCSV.csv");  //Можно лист передать!
+
 
         ShopOne shopOne = new ShopOne();
         shopOne.addProductShop(csvFile.createListProductFromFile("productsInShopCSV.csv"));

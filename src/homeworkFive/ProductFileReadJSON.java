@@ -9,8 +9,6 @@ import java.util.List;
 
 public class ProductFileReadJSON {
 
-    private static List<Product> productsList = new ArrayList<>();
-
     private List<Product> createProducts(String productsString) {
         String[] split = productsString.split("},\\{");
 
@@ -44,6 +42,7 @@ public class ProductFileReadJSON {
     }
 
     public List<Product> createLispProductFile(String fileName) {
+
         String accumulator = "";
         try (FileReader fileReader = new FileReader(fileName);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
@@ -59,11 +58,13 @@ public class ProductFileReadJSON {
             e.printStackTrace();
         }
 
+
         accumulator = accumulator.replace("[", "");
         accumulator = accumulator.replace("]", "");
         accumulator = accumulator.replaceAll(" ", "");
 
-        productsList = createProducts(accumulator);
+        List<Product> productsList = createProducts(accumulator);
+
         return productsList;
     }
 }
