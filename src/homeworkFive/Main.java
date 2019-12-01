@@ -16,10 +16,8 @@ public class Main {
         list.add(keyboard2);
         list.add(keyboard1);
 
-
-
         CsvFile csvFile = new CsvFile();
-        csvFile.addProductInFile(monitor, "productsInShopCSV.csv");  //Можно лист передать!
+        csvFile.addProductInFile(list, "productsInShopCSV.csv");  //Можно лист передать!
 
         ShopOne shopOne = new ShopOne();
         shopOne.addProductShop(csvFile.createListProductFromFile("productsInShopCSV.csv"));
@@ -47,7 +45,5 @@ public class Main {
         list3.add(0001);
         shopTwo.printCheck(shopTwo.getCheck(list3));
         System.out.println("Осталось: " + shopTwo.getMapProduct());
-
-
     }
 }
