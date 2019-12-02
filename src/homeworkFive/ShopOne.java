@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShopOne implements ShopInterface  {
-    public List<Product> getProductList() {
-        return productList;
-    }
 
     private List<Product> productList = new ArrayList<>();
 

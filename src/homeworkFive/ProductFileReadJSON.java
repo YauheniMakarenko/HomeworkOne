@@ -44,13 +44,13 @@ public class ProductFileReadJSON {
 
         String accumulator = "";
         FileReader fileReader = new FileReader(fileName);
-             BufferedReader bufferedReader = new BufferedReader(fileReader) ;
-            String string = "";
-            while (string != null) {
-                string = bufferedReader.readLine();
-                if (string == null) break;
-                accumulator += string;
-            }
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String string = "";
+        while (string != null) {
+            string = bufferedReader.readLine();
+            if (string == null) break;
+            accumulator += string;
+        }
 
 
         accumulator = accumulator.replace("[", "");
