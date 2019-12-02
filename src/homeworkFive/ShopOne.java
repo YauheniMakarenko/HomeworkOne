@@ -1,23 +1,27 @@
 package homeworkFive;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ShopOne implements ShopInterface  {
-
-    public List<Product> getProductList() {
-        return productList;
-    }
 
     private List<Product> productList = new ArrayList<>();
 
     public void addProductShop(Product product) {
+        if (productList.contains(product)) return;
         productList.add(product);
     }
 
+    public void addProductShop(List<Product> list){
+        for (int i = 0; i < list.size(); i++) {
+            addProductShop(list.get(i));
+        }
+    }
+
     public Check getCheck(List<Integer> list) {
+        if (list == null) {
+            return null;
+        }
         Check check = new Check();
         for (int i = 0; i < productList.size(); i++) {
             for (int j = 0; j < list.size(); j++) {
