@@ -1,10 +1,12 @@
 package homeworkFive;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         Product mouse = new Mouse(0001, "ScorpionG920", 70 );
         Product keyboard1 = new Keyboard(1010, "Razen", 156);
         Product keyboard2 = new Keyboard(1230, "A4Tech",180);
@@ -21,7 +23,14 @@ public class Main {
 
 
         ShopOne shopOne = new ShopOne();
-        shopOne.addProductShop(csvFile.createListProductFromFile("productsInShopCSV.csv"));
+        try{
+            shopOne.addProductShop(csvFile.createListProductFromFile("productsInShopCSV.csv"));
+        }catch (FileNotFoundException e) {
+            System.out.println("Input problem");
+            System.out.println(e);
+            shopOne.addProductShop(mouse);
+        }
+
 
         List list2 = new ArrayList();
         list2.add(0001);
@@ -36,7 +45,13 @@ public class Main {
         productFileWriteJSON.addProductInFile(monitor, "productsInShopJSON.json");  //Можно лист передать!
 
         ShopTwo shopTwo = new ShopTwo();
-        shopTwo.addProductShop(productFileReadJSON.createLispProductFile("productsInShopJSON.json"));
+        try{
+            shopTwo.addProductShop(productFileReadJSON.createLispProductFile("productsInShopJSON.json"));
+        }catch (FileNotFoundException e){
+            System.out.println("Input problem");
+            System.out.println(e);
+            shopTwo.addProductShop(monitor);
+        }
 
         List list3 = new ArrayList();
         list3.add(1010);
